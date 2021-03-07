@@ -94,6 +94,9 @@ while command != "quit":
             ch8 = random.choice(numbers)
         password = character_1 + character_2 + character_3 + character_4 + character_5 + character_6 + character_7 + ch8
         print(f"Your newly generated password is {password}")
+        password_file = open("password.txt", "w")
+        password_write = password_file.write(password)
+        password_file.close()
         break
 
     elif command == "help":
