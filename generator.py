@@ -1,5 +1,6 @@
 import random
 
+running = True
 
 symbols = ["!", "?", ",", ".", "/"]
 letters_lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
@@ -16,7 +17,7 @@ random_choices = ["symbols", "letters_lower", "letters_upper", "numbers"]
 password = ""
 command = ""
 
-while command != "quit":
+while running:
     command = input("> ").lower()
     if command == "generate":
         random_choice = random.choice(random_choices)
@@ -96,6 +97,7 @@ while command != "quit":
         password_file = open("password.txt", "w")
         password_write = password_file.write(password)
         password_file.close()
+        input("Press enter to close.")
         break
 
     elif command == "help":
